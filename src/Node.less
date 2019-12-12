@@ -1,0 +1,87 @@
+.znui-react-graph-node{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*
+    border-radius: 5px;
+    box-shadow: 0 4px 23px 5px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.15);
+    width: 48px;
+    height: 48px;
+    z-index: 2;
+    background-color: #FFF;
+    border: 1px solid transparent;
+    */
+    /*background-color: transparent;*/
+    &.draggable {
+        cursor: move;
+    }
+    &[data-highlight=true]{
+        border: 1px solid #f0ad4e;
+        background-color: #f0ad4e;
+    }
+
+    @-webkit-keyframes  shineRed {
+        from { -webkit-box-shadow: 0 0 5px #bbb; }
+        50% { -webkit-box-shadow: 0 0 10px red; }
+        to { -webkit-box-shadow: 0 0 5px #bbb; }
+    }
+    @-webkit-keyframes  backgroundColorShineRed {
+        from { background-color: transparent; }
+        50% { background-color: #f3d5d5; }
+        to { background-color: transparent; }
+    }
+    @-webkit-keyframes shineBlue {
+        from { -webkit-box-shadow: 0 0 4px #f0ad4a; }
+        50% { -webkit-box-shadow: 0 0 8px #f5ad2e; }
+        to { -webkit-box-shadow: 0 0 4px #f0ad4e; }
+    }
+
+    &[data-selected=true]{
+        /*border: 1px solid #f0ad4e;
+        border-radius: 50%;*/
+        -webkit-animation-name: shineRed;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-iteration-count: infinite;
+    }
+    .manual-connect {
+        position: absolute;
+        z-index: 10;
+        opacity: 0.08;
+        top: 50%;
+        left: 50%;
+        margin-top: -4px;
+        margin-left: -4px;
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        background-color: red;
+    }
+    &:hover{
+        .manual-connect{
+            opacity: 0.8;
+        }
+    }
+    .node-content{
+        width: 48px;
+        height: 48px;
+        background-color: #FFF;
+        border-radius: 50%;
+        border: 1px solid #0C72A5;
+        &>.type-child{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            background-color: #5bc0de;
+            &[data-draggable=false]{
+                float: right;
+                margin: 2px;
+            }
+            &:hover{
+                background-color: #f0ad4e;
+                border: 1px solid #f0ad4e;
+            }
+        }
+    }
+}

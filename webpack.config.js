@@ -16,8 +16,8 @@ if(uglifyIndex!=-1){
 }
 
 module.exports = {
-    context: path.join(process.cwd(), 'web', 'src'),
-    mode: process.env.NODE_ENV || 'production',
+    context: path.join(process.cwd(), 'src'),
+    mode: 'production',
     entry: {
         "index": "./index.js"
     },
@@ -26,16 +26,12 @@ module.exports = {
         "react-dom": "ReactDOM"
     },
     output: {
-        path: path.join(process.cwd(), 'web', 'dist'),
+        path: path.join(process.cwd(), 'dist'),
         //chunkFilename: '[name].js',
         filename: '[name].js',
         //library: "friendly",
         libraryTarget: "this"
         //libraryExport: "default"
-    },
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
     },
     module: {
         // Disable handling of unknown requires
