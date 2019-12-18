@@ -1,6 +1,6 @@
 {
   "name": "znui-react-graph",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Web graph component.",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "clean-dist": "rimraf dist",
     "clean-build": "rimraf build",
     "webpack": "rimraf dist && webpack",
+    "webpack-watch": "rimraf dist && webpack --watch",
     "build": "npm run clean-build && babel src -d build",
     "dist": "npm run clean-dist && webpack --uglify",
     "release": "npm run build && npm run dist"
@@ -25,6 +26,6 @@
   "email": "xuyy0618@qq.com",
   "license": "MIT",
   "dependencies": {
-    "znui-react": "^1.1.7"
+    "znui-react": "^1.1.9"
   }
 }
