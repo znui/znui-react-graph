@@ -1,4 +1,3 @@
-require('./Node.less');
 var React = require('react');
 var Link = require('./Link');
 
