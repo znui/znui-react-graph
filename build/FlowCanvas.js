@@ -2,15 +2,14 @@
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var React = require('react');
-
-var ReactDOM = require('react-dom');
+var React = require('react') || znui.React;
+var ReactDOM = require('react-dom') || znui.ReactDOM;
 
 var Node = require('./Node');
 
 var Link = require('./Link');
 
-module.exports = React.createClass({
+module.exports = znui.react.createClass({
   displayName: 'FlowCanvas',
   getInitialState: function getInitialState() {
     return {
@@ -188,7 +187,7 @@ module.exports = React.createClass({
   render: function render() {
     zn.debug('FlowCanvas data: ', this.state);
     return React.createElement("div", {
-      className: znui.react.classname("znui-react-graph-flow-canvas", this.props.className)
+      className: znui.react.classname("zr-graph-flow-canvas", this.props.className)
     }, (this.state.nodes || []).map(function (node, index) {
       var _this = this;
 

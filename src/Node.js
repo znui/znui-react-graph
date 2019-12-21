@@ -1,7 +1,7 @@
-var React = require('react');
+var React = require('react') || znui.React;
 var Link = require('./Link');
 
-module.exports = React.createClass({
+module.exports = znui.react.createClass({
 	displayName:'Node',
 	getDefaultProps: function (){
 		return {
@@ -102,7 +102,7 @@ module.exports = React.createClass({
 		if(!this._dragTemp){
 			var _self = this;
 			var _dragTemp = this._dragTemp = document.createElement('div');
-			_dragTemp.className = "znui-react-graph-node-line-temp";
+			_dragTemp.className = "zr-graph-node-line-temp";
 			zn.dom.setStyles(this._dragTemp, {
 				width: 8,
 				height: 8,
@@ -146,13 +146,13 @@ module.exports = React.createClass({
 		if(!dom||dom===document.body){ return; }
 		var _className = dom.className;
 		if(!_className){ return this.findNode(dom.parentNode); }
-		if(_className == 'znui-react-graph-flow-canvas'){
+		if(_className == 'zr-graph-flow-canvas'){
 			return;
 		}
 		if(!_className.indexOf){
 			return;
 		}
-		if(_className.indexOf('znui-react-node') !== -1){
+		if(_className.indexOf('zr-node') !== -1){
 			return dom.getAttribute('data-id');
 		} else {
 			return this.findNode(dom.parentNode);
@@ -233,7 +233,7 @@ module.exports = React.createClass({
 	render:function(){
 		return (
 			<div ref={(ref)=>this._dom = ref} style={this.props.style}
-				className={znui.react.classname('znui-react-graph-node', this.props.className)}
+				className={znui.react.classname('zr-graph-node', this.props.className)}
 				data-id={this.getId()}
 				data-highlight={this.state.highLight}
 				data-selected={this.props.selected}

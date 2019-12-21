@@ -1,8 +1,8 @@
+
+require('znui-react');
 var React = require('react');
 var ReactDOM = require('react-dom');
-var createClass = require('create-react-class');
-require('../../znui-react/index.all.js');
-znui.react.fixCreateReactClass(React, createClass);
+
 var graph = require('../src/index.js');
 require('./index.less');
 console.log(graph);

@@ -1,9 +1,9 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+var React = require('react') || znui.React;
+var ReactDOM = require('react-dom') || znui.ReactDOM;
 var Node = require('./Node');
 var Link = require('./Link');
 
-module.exports = React.createClass({
+module.exports = znui.react.createClass({
 	displayName:'FlowCanvas',
 	getInitialState:function(){
 		return {
@@ -165,7 +165,7 @@ module.exports = React.createClass({
 	render:function(){
 		zn.debug('FlowCanvas data: ', this.state);
 		return (
-			<div className={znui.react.classname("znui-react-graph-flow-canvas", this.props.className)} >
+			<div className={znui.react.classname("zr-graph-flow-canvas", this.props.className)} >
 				{
 					(this.state.nodes||[]).map(function (node, index){
 						node.id = node.id || zn.uuid();

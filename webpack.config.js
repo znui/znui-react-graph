@@ -18,10 +18,14 @@ if(uglifyIndex!=-1){
 module.exports = {
     context: path.join(process.cwd(), 'src'),
     mode: 'production',
-    entry: ['./index.js', './index.less'],
+    entry: {
+        'index': './index.js',
+        'index.style': './index.less'
+    },
     externals: {
         "react": "React",
-        "react-dom": "ReactDOM"
+        "react-dom": "ReactDOM",
+        "znui-react": "zr"
     },
     output: {
         path: path.join(process.cwd(), 'dist'),

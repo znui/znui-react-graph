@@ -1,10 +1,9 @@
 "use strict";
 
 if (!znui) {
-  require('znui-react/index.all.js');
+  require('znui-react');
 }
 
-znui.react.fixCreateReactClass(require('react'), require('create-react-class'));
 module.exports = {
   'Node': require('./Node'),
   'Link': require('./Link'),

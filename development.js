@@ -1,2 +1,2 @@
-require('./dist/main.css');
+require('./dist/index.style.css');
 module.exports = require('./build/index.js');

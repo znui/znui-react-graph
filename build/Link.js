@@ -1,8 +1,7 @@
 "use strict";
 
-var React = require('react');
-
-module.exports = React.createClass({
+var React = require('react') || znui.React;
+module.exports = znui.react.createClass({
   displayName: 'Link',
   getDefaultProps: function getDefaultProps() {
     return {
@@ -213,7 +212,7 @@ module.exports = React.createClass({
     	</marker>
     </defs>
     		return (
-    	<svg className="znui-react-link" version="1.1" xmlns="http://www.w3.org/2000/svg" style={this.state.svgStyle}>
+    	<svg className="zr-link" version="1.1" xmlns="http://www.w3.org/2000/svg" style={this.state.svgStyle}>
     		<defs>
     			<marker id="Triangle" viewBox="0 0 20 20" refX="0" refY="10" markerUnits="strokeWidth" markerWidth="20" markerHeight="20" orient="auto">
     				<path d="M 0 0 L 20 10 L 0 20 z"/>
@@ -224,7 +223,7 @@ module.exports = React.createClass({
     );
     */
     return React.createElement("svg", {
-      className: "znui-react-graph-link",
+      className: "zr-graph-link",
       version: "1.1",
       xmlns: "http://www.w3.org/2000/svg",
       style: this.state.svgStyle

@@ -1,5 +1,12 @@
 .idea/*
 .DS_Store
 .git
+example/*
 node_modules/*
+src/*
+.babelrc
+.gitignore
+.npmignore
 package-lock.json
+webpack.config.example.js
+webpack.config.js
