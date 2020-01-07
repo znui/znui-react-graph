@@ -1,6 +1,6 @@
 {
   "name": "znui-react-graph",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Web graph component.",
   "main": "production.js",
   "scripts": {
@@ -26,6 +26,6 @@
   "email": "xuyy0618@qq.com",
   "license": "MIT",
   "dependencies": {
-    "znui-react": "^1.2.8"
+    "znui-react": "^1.3.8"
   }
 }

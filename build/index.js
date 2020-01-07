@@ -1,8 +1,6 @@
 "use strict";
 
-if (!znui) {
-  require('znui-react');
-}
+require('znui-react');
 
 module.exports = {
   'Node': require('./Node'),
