@@ -1,7 +1,8 @@
 "use strict";
 
-var React = require('react') || znui.React;
-module.exports = znui.react.createClass({
+var React = znui.React || require('react');
+
+module.exports = React.createClass({
   displayName: 'Link',
   getDefaultProps: function getDefaultProps() {
     return {

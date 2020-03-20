@@ -1,18 +1,20 @@
 {
   "name": "znui-react-graph",
-  "version": "1.0.4",
+  "version": "2.0.1",
   "description": "Web graph component.",
-  "main": "production.js",
+  "main": "index.js",
   "scripts": {
-    "webpack-example": "rimraf example/dist && webpack --config webpack.config.example.js",
-    "webpack-example-watch": "rimraf example/dist && webpack --config webpack.config.example.js --watch",
-    "clean-dist": "rimraf dist",
-    "clean-build": "rimraf build",
-    "webpack": "rimraf dist && webpack",
-    "webpack-watch": "rimraf dist && webpack --watch",
-    "build": "npm run clean-build && babel src -d build",
-    "dist": "npm run clean-dist && webpack --uglify",
-    "release": "npm run build && npm run dist"
+    "clean-example": "rimraf ./example/www/dist",
+    "clean-exports": "rimraf ./__/build/ && rimraf ./__/dist/",
+    "zr.start": "webpack-dev-server --config ./example/webpack.config.js --znui-react.path ../../ --watch",
+    "zr.prod.dist": "rimraf ./__/dist/production && webpack --config ./__/production.js --znui-react.path ../../ --uglify",
+    "zr.prod.dist.watch": "rimraf ./__/dist/production && webpack --config ./__/production.js --znui-react.path ../../  --uglify --watch",
+    "zr.prod.build": "rimraf ./__/build && babel src -d __/build/",
+    "zr.prod.build.watch": "rimraf ./__/build && babel src -d __/build/ --watch",
+    "zr.dev.dist": "rimraf ./__/dist/development && webpack --config ./__/development.js --znui-react.path ../../",
+    "zr.dev.dist.watch": "rimraf ./__/dist/development && webpack --config ./__/development.js --znui-react.path ../../ --watch",
+    "zr.release": "npm run zr.prod.build && npm run zr.prod.dist && npm run zr.dev.dist",
+    "zr.release.watch": "npm run zr.prod.build.watch && npm run zr.prod.dist.watch && npm run zr.dev.dist.watch"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,6 @@
   "email": "xuyy0618@qq.com",
   "license": "MIT",
   "dependencies": {
-    "znui-react": "^1.3.8"
+    "znui-react": "latest"
   }
 }

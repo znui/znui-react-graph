@@ -1,11 +1,8 @@
-
 require('znui-react');
-var React = require('react');
-var ReactDOM = require('react-dom');
-
-var graph = require('../src/index.js');
+require('../../src/index.less');
 require('./index.less');
-console.log(graph);
+var React = znui.React || require('react');
+var graph = require('../../src/index');
 var _data = {
     nodes: [
         {
@@ -22,10 +19,9 @@ var _data = {
         {target: 1, source: 2}
     ]
 };
-ReactDOM.render(
-    <div>
-        <graph.FlowCanvas data={_data} />
-    </div>,
-    document.getElementById('container'),
-);
 
+znui.react.createApplication({
+    render: <div className="components">
+        <graph.FlowCanvas data={_data} />
+    </div>
+});

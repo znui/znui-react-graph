@@ -1,4 +1,3 @@
-require('znui-react');
 module.exports = {
     'Node': require('./Node'),
     'Link': require('./Link'),

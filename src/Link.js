@@ -1,6 +1,6 @@
-var React = require('react') || znui.React;
+var React = znui.React || require('react');
 
-module.exports = znui.react.createClass({
+module.exports = React.createClass({
 	displayName: 'Link',
 	getDefaultProps: function (){
 		return {

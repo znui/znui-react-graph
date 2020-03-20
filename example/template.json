@@ -1,0 +1,14 @@
+{
+    "links": {
+
+    },
+    "externals": {
+        "zn": "./external/zn.js",
+        "zn.web": "./external/zn.web.js",
+        "react": "./external/react.development.js",
+        "react-dom": "./external/react-dom.development.js"
+    },
+    "scripts": {
+        
+    }
+}
