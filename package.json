@@ -1,12 +1,13 @@
 {
   "name": "znui-react-graph",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Web graph component.",
   "main": "index.js",
   "scripts": {
-    "clean-example": "rimraf ./example/www/dist",
+    "clean-example": "rimraf ./example/www",
     "clean-exports": "rimraf ./__/build/ && rimraf ./__/dist/",
-    "zr.start": "webpack-dev-server --config ./example/webpack.config.js --znui-react.path ../../ --watch",
+    "zr.start": "rimraf ./example/www && webpack-dev-server --config ./example/development.js --znui-react.path ../../ --watch",
+    "zr.example": "rimraf ./example/www && webpack --config ./example/production.js --znui-react.path ../../",
     "zr.prod.dist": "rimraf ./__/dist/production && webpack --config ./__/production.js --znui-react.path ../../ --uglify",
     "zr.prod.dist.watch": "rimraf ./__/dist/production && webpack --config ./__/production.js --znui-react.path ../../  --uglify --watch",
     "zr.prod.build": "rimraf ./__/build && babel src -d __/build/",

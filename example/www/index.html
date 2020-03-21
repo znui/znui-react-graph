@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+                <title>production -- Example znui-react-graph</title>
+                <meta charset="UTF-8">
+                
+                <meta name="release-time" content="3/21/2020, 9:11:21 PM">
+                
+                
+                <meta name="name" content="znui-react-graph">
+                
+                
+                <meta name="version" content="2.0.1">
+                
+                
+                <meta name="commitid" content="1584796281957">
+                
+                
+                <meta name="env" content="production">
+                
+                <meta name="keywords" content="web component,graph">
+                <meta name="description" content="Web graph component.">
+                <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                <meta name="format-detection" content="telephone=no">
+                <meta http-equiv="x-rim-auto-match" content="none">
+                <meta http-equiv="pragma" content="no-cache">
+                <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+                <meta http-equiv="expires" content="0">
+                
+                <style type="text/css">
+                        [data-loader='ball-scale']
+                        {
+                        width: 50px;
+                        height: 50px;
+
+                        -webkit-animation: ball-scale infinite linear .75s;
+                        -moz-animation: ball-scale infinite linear .75s;
+                                -o-animation: ball-scale infinite linear .75s;
+                                animation: ball-scale infinite linear .75s;
+
+                        border-radius: 100%;
+                        background-color: #fff;
+                        }
+                        @-webkit-keyframes ball-scale
+                        {
+                        0%
+                        {
+                                -webkit-transform: scale(.1);
+                                -ms-transform: scale(.1);
+                                -o-transform: scale(.1);
+                                        transform: scale(.1);
+
+                                opacity: 1;
+                        }
+                        100%
+                        {
+                                -webkit-transform: scale(1);
+                                -ms-transform: scale(1);
+                                -o-transform: scale(1);
+                                        transform: scale(1);
+
+                                opacity: 0;
+                        }
+                        }
+
+                        @-moz-keyframes ball-scale
+                        {
+                        0%
+                        {
+                                -webkit-transform: scale(.1);
+                                -ms-transform: scale(.1);
+                                -o-transform: scale(.1);
+                                        transform: scale(.1);
+
+                                opacity: 1;
+                        }
+                        100%
+                        {
+                                -webkit-transform: scale(1);
+                                -ms-transform: scale(1);
+                                -o-transform: scale(1);
+                                        transform: scale(1);
+
+                                opacity: 0;
+                        }
+                        }
+
+                        @-o-keyframes ball-scale
+                        {
+                        0%
+                        {
+                                -webkit-transform: scale(.1);
+                                -ms-transform: scale(.1);
+                                -o-transform: scale(.1);
+                                        transform: scale(.1);
+
+                                opacity: 1;
+                        }
+                        100%
+                        {
+                                -webkit-transform: scale(1);
+                                -ms-transform: scale(1);
+                                -o-transform: scale(1);
+                                        transform: scale(1);
+
+                                opacity: 0;
+                        }
+                        }
+
+                        @keyframes ball-scale
+                        {
+                        0%
+                        {
+                                -webkit-transform: scale(.1);
+                                -ms-transform: scale(.1);
+                                -o-transform: scale(.1);
+                                        transform: scale(.1);
+
+                                opacity: 1;
+                        }
+                        100%
+                        {
+                                -webkit-transform: scale(1);
+                                -ms-transform: scale(1);
+                                -o-transform: scale(1);
+                                        transform: scale(1);
+
+                                opacity: 0;
+                        }
+                        }
+
+                        body{ margin: 0px; padding: 0px; }
+                        #zr-container{ }
+                        #zr-container > .zr-container-loading{ 
+                                font-family: monospace;
+                                padding: 100px 20px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;    
+                                color: #54aaf1;   
+                                font-weight: bold; 
+                        }
+                        #zr-container > .zr-container-loading > .loader{ 
+                                width: 64px; 
+                                height: 64px; 
+                                background-color: #54aaf1;
+                                border-left-color: #54aaf1 !important;
+                                border-right-color: #54aaf1 !important; 
+                        }
+                </style>
+                
+	<link href="./dist/index.min.css?030f4697b9d4ab9547b0" rel="stylesheet"></head>
+	<body>
+		<div id="zr-container">
+			<div class="zr-container-loading">
+                                <div class="loader" data-loader="ball-scale"></div>
+                                <div>Loading...</div>
+			</div>
+                </div>
+                
+                <script type="text/javascript" src="./externals/zn.minx.js?1584796281957"></script>
+                
+                <script type="text/javascript" src="./externals/zn.web.minx.js?1584796281957"></script>
+                
+                <script type="text/javascript" src="./externals/react.production.min.js?1584796281957"></script>
+                
+                <script type="text/javascript" src="./externals/react-dom.production.min.js?1584796281957"></script>
+                
+                
+	<script type="text/javascript" src="./dist/index.min.js?030f4697b9d4ab9547b0"></script></body>
+</html>
