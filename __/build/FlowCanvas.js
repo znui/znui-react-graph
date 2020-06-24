@@ -187,14 +187,14 @@ module.exports = React.createClass({
   },
   render: function render() {
     zn.debug('FlowCanvas data: ', this.state);
-    return React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       className: znui.react.classname("zr-graph-flow-canvas", this.props.className),
       style: this.props.style
     }, (this.state.nodes || []).map(function (node, index) {
       var _this = this;
 
       node.id = node.id || zn.uuid();
-      return React.createElement(Node, _extends({}, node, {
+      return /*#__PURE__*/React.createElement(Node, _extends({}, node, {
         key: node.id,
         index: index,
         canvas: this,
@@ -214,12 +214,12 @@ module.exports = React.createClass({
       }));
     }.bind(this)), this.state.links.map(function (link, index) {
       link.id = link.id || zn.uuid();
-      return React.createElement(Link, _extends({}, link, {
+      return /*#__PURE__*/React.createElement(Link, _extends({}, link, {
         key: link.id,
         render: this.props.linkRender,
         onLinkDidMount: this.__onLinkDidMount
       }));
-    }.bind(this)), React.createElement(Link, {
+    }.bind(this)), /*#__PURE__*/React.createElement(Link, {
       ref: "temp"
     }));
   }

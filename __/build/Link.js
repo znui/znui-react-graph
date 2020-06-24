@@ -223,12 +223,12 @@ module.exports = React.createClass({
     	 </svg>
     );
     */
-    return React.createElement("svg", {
+    return /*#__PURE__*/React.createElement("svg", {
       className: "zr-graph-link",
       version: "1.1",
       xmlns: "http://www.w3.org/2000/svg",
       style: this.state.svgStyle
-    }, React.createElement("defs", null, React.createElement("marker", {
+    }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("marker", {
       id: "Triangle",
       markerWidth: "20",
       markerHeight: "20",
@@ -237,10 +237,10 @@ module.exports = React.createClass({
       orient: "auto",
       markerUnits: "strokeWidth",
       viewBox: "0 0 50 50"
-    }, React.createElement("path", {
+    }, /*#__PURE__*/React.createElement("path", {
       d: "M0,0 L0,6 L9,3 z",
       fill: "#f00"
-    }))), React.createElement("line", {
+    }))), /*#__PURE__*/React.createElement("line", {
       className: "line",
       markerStart: "url(#Triangle)",
       x1: this.state.x1,

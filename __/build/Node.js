@@ -88,7 +88,7 @@ module.exports = React.createClass({
         _key;
 
     if (node) {
-      _node = React.createElement(Node, node);
+      _node = /*#__PURE__*/React.createElement(Node, node);
       this._nodes[_node.state.uuid] = _node;
       React.render(_node, this._dom);
     }
@@ -256,7 +256,7 @@ module.exports = React.createClass({
   },
   __editableRender: function __editableRender() {
     if (this.props.editable) {
-      return React.createElement("i", {
+      return /*#__PURE__*/React.createElement("i", {
         className: "manual-connect",
         onMouseUp: this.__onConnectMouseUp
       });
@@ -272,7 +272,7 @@ module.exports = React.createClass({
   render: function render() {
     var _this = this;
 
-    return React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       ref: function ref(_ref) {
         return _this._dom = _ref;
       },
