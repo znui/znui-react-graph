@@ -1,7 +1,10 @@
 .zr-graph-link{
     position: absolute;
     /*z-index: 1;*/
-    &>line:hover{
-        stroke: #f0ad4e !important;
+    .line{
+        &:hover{
+            stroke: #f0ad4e !important;
+            z-index: 1000;
+        }
     }
 }

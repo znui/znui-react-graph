@@ -19,8 +19,9 @@
   position: absolute;
   /*z-index: 1;*/
 }
-.zr-graph-link > line:hover {
+.zr-graph-link .line:hover {
   stroke: #f0ad4e !important;
+  z-index: 1000;
 }
 .zr-graph-node {
   position: absolute;

@@ -186,7 +186,7 @@ module.exports = React.createClass({
     this.props.onNodeClick && this.props.onNodeClick(event, node, data, this);
   },
   render: function render() {
-    zn.debug('FlowCanvas data: ', this.state);
+    //zn.debug('FlowCanvas data: ', this.state);
     return /*#__PURE__*/React.createElement("div", {
       className: znui.react.classname("zr-graph-flow-canvas", this.props.className),
       style: this.props.style

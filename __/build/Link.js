@@ -1,6 +1,7 @@
 "use strict";
 
-var React = znui.React || require('react');
+var React = znui.React || require('react'); //var ReactDOM = znui.ReactDOM || require('react-dom');
+
 
 module.exports = React.createClass({
   displayName: 'Link',
@@ -11,7 +12,7 @@ module.exports = React.createClass({
         'strokeWidth': '1px'
       },
       lineStyle: {
-        'stroke': '#E26965',
+        'stroke': '#D0E4FF',
         'strokeWidth': '1px'
       }
     };
@@ -108,7 +109,7 @@ module.exports = React.createClass({
       return;
     }
 
-    var _minSize = this.props.minSize || 2,
+    var _minSize = this.props.minSize || 10,
         _dir = this.__getDirection(_xy1.x, _xy1.y, _xy2.x, _xy2.y);
 
     var _x = 0,
@@ -205,6 +206,10 @@ module.exports = React.createClass({
     path += " L" + x3 + "," + y3;
     return path;
   },
+  __getPath: function __getPath() {
+    var _state = this.state;
+    return "M" + _state.x1 + "," + _state.y1 + " L" + (_state.x1 + _state.x2) / 2 + "," + (_state.y1 + _state.y2) / 2 + " L" + _state.x2 + "," + _state.y2;
+  },
   render: function render() {
     /*
     <defs>
@@ -221,32 +226,30 @@ module.exports = React.createClass({
     		</defs>
     		<path className="line" d={'M '+this.state.x1+' '+ this.state.y1 +' L ' + this.state.x2 + ' ' + this.state.y2} stroke="red" markerMid='Triangle'/>
     	 </svg>
+    	 <line className="line" markerEnd="url(#ancestor-arrow)" x1={this.state.x1} y1={this.state.y1} x2={this.state.x2} y2={this.state.y2} style={this.state.lineStyle}></line>
     );
     */
     return /*#__PURE__*/React.createElement("svg", {
       className: "zr-graph-link",
       version: "1.1",
       xmlns: "http://www.w3.org/2000/svg",
-      style: this.state.svgStyle
-    }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("marker", {
-      id: "Triangle",
-      markerWidth: "20",
-      markerHeight: "20",
-      refX: "0",
-      refY: "4",
-      orient: "auto",
+      style: znui.react.style(this.state.svgStyle)
+    }, /*#__PURE__*/React.createElement("marker", {
+      id: "ancestor-arrow",
       markerUnits: "strokeWidth",
-      viewBox: "0 0 50 50"
+      markerWidth: "12",
+      markerHeight: "12",
+      viewBox: "0 0 12 12",
+      refX: "35",
+      refY: "6",
+      orient: "auto"
     }, /*#__PURE__*/React.createElement("path", {
-      d: "M0,0 L0,6 L9,3 z",
-      fill: "#f00"
-    }))), /*#__PURE__*/React.createElement("line", {
-      className: "line",
-      markerStart: "url(#Triangle)",
-      x1: this.state.x1,
-      y1: this.state.y1,
-      x2: this.state.x2,
-      y2: this.state.y2,
+      d: "M2,2 L12,6 L2,10 L4,6 L2,2",
+      fill: "#38f"
+    })), /*#__PURE__*/React.createElement("path", {
+      className: "line ancestor root",
+      d: this.__getPath(),
+      markerMid: "url(#ancestor-arrow)",
       style: this.state.lineStyle
     }));
   }

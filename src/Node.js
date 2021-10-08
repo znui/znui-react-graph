@@ -21,8 +21,7 @@ module.exports = React.createClass({
 		}
 	},
 	componentDidMount:function(){
-		var _source = this._dom,
-			_self = this;
+		var _source = this._dom;
 		this._x = this.props.x;
 		this._y = this.props.y;
 		this._parentPosition = zn.dom.getPosition(this._dom.parentNode);
@@ -77,8 +76,7 @@ module.exports = React.createClass({
 		this._nodes[key] = node;
 	},
 	addNode: function (node){
-		var _node = null,
-			_key;
+		var _node = null;
 
 		if(node){
 			_node = <Node {...node}/>;
@@ -152,7 +150,7 @@ module.exports = React.createClass({
 		if(!_className.indexOf){
 			return;
 		}
-		if(_className.indexOf('zr-node') !== -1){
+		if(_className.indexOf('zr-graph-node') !== -1){
 			return dom.getAttribute('data-id');
 		} else {
 			return this.findNode(dom.parentNode);
@@ -223,6 +221,9 @@ module.exports = React.createClass({
 			return <i className="manual-connect" onMouseUp={this.__onConnectMouseUp} />;
 		}
 	},
+	__onDomClick: function (event){
+		
+	},
 	__onContextMenu: function (event){
 		event.stopPropagation();
 		return this.props.onContextMenu && this.props.onContextMenu(event, this);
@@ -237,6 +238,7 @@ module.exports = React.createClass({
 				data-id={this.getId()}
 				data-highlight={this.state.highLight}
 				data-selected={this.props.selected}
+				onClick={this.__onDomClick}
 				onContextMenu={this.__onContextMenu} >
 				{this.props.render && this.props.render(this.props.data, this)}
 				{this.__editableRender()}
